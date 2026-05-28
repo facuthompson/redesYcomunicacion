@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Red y Arquitectura</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+
+
+    <header class="navbar">
+
+        <div class="logo">
+            Redes & Arquitectura
+        </div>
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#redes">Redes</a>
+
+            <a href="#topologias">Topologías</a>
+
+            <a href="#stp">STP</a>
+            <a href="#capas">Diseño de Capas</a>
+
+            <a href="#qos">QoS</a>
+
+            <a href="#osi-section">OSI</a>
+
+            <a href="#tcpip">TCP/IP</a>
+
+            <a href="#comparativa">Comparativa</a>
+
+            <a href="#footer">Integrantes</a>
+
+        </nav>
+
+    </header>
+
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>
+                Modelos de Redes
+            </h1>
+            <div>
+                <p>
+                    Los modelos de red permiten organizar y entender cómo se comunican las computadoras dentro de una
+                    red.
+                    Su propósito central es formalizar y estructurar la interacción entre sistemas de computación
+                    heterogéneos, garantizando la interoperabilidad sin importar el fabricante, el hardware o el sistema
+                    operativo empleado.
+                </p>
+            </div>
+
+
+            <a href="#redes" class="btn">
+                Explorar
+            </a>
+
+        </div>
+
+        <div class="hero-glow"></div>
+
+    </section>
+
+
+    <section class="section" id="redes">
+
+        <div class="section-title">
+
+            <h2>¿Qué es una Red?</h2>
+            <p>Una red es un conjunto de nodos (routers, servidores, computadoras) y arcos (cables de cobre, fibra
+                óptica, ondas de radio) que conectan ciertos pares de nodos para transportar datos y compartir recursos
+                de manera eficiente.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Compartir Recursos</h3>
+
+                <p>
+                    Permite intercambio de archivos, impresoras y conexiones a Internet.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Tolerancia al Fallo</h3>
+
+                <p>
+                    Protocolos como OSPF y BGP mantienen la conectividad automáticamente.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Escalabilidad</h3>
+
+                <p>
+                    Posibilidad de agregar dispositivos sin rediseñar toda la red.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section alt" id="topologias">
+
+        <div class="section-title">
+
+            <h2>Topologías de Red</h2>
+            <p>
+                La topología define la estructura de una red y se divide en física
+                (disposición espacial de cables y dispositivos) y lógica (la ruta que
+                siguen los datos a través de los medios)
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="topology-grid">
+
+            <button class="topology-card" onclick="showTopology('bus')">
+                Bus
+            </button>
+
+            <button class="topology-card" onclick="showTopology('estrella')">
+                Estrella
+            </button>
+
+            <button class="topology-card" onclick="showTopology('anillo')">
+                Anillo
+            </button>
+
+            <button class="topology-card" onclick="showTopology('malla')">
+                Malla
+            </button>
+
+            <button class="topology-card" onclick="showTopology('hibrida')">
+                Híbrida
+            </button>
+
+        </div>
+
+        <div class="info-box">
+
+            <h3 id="topologyTitle">
+            </h3>
+
+            <p id="topologyText">
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="stp">
+
+        <div class="section-title">
+
+            <h2>Protocolo STP</h2>
+            <p>
+                El protocolo STP (Spanning Tree Protocol, IEEE 802.1D) es la implementación
+                práctica del árbol de expansión. Su función es evitar bucles y tormentas de
+                broadcast en redes con switches conectados de forma redundante, desactivando
+                automáticamente los caminos sobrantes y manteniéndolos exclusivamente como
+                respaldo.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="stp-container">
+
+            <button class="stp-box" onclick="showSTP('rutas')">
+
+                <span>1</span>
+
+                <h3>Detectar rutas</h3>
+
+            </button>
+
+            <button class="stp-box" onclick="showSTP('bloquear')">
+
+                <span>2</span>
+
+                <h3>Bloquear redundancias</h3>
+
+            </button>
+
+            <button class="stp-box" onclick="showSTP('backup')">
+
+                <span>3</span>
+
+                <h3>Activar backups</h3>
+
+            </button>
+
+        </div>
+
+        <div class="info-box">
+
+            <h3 id="stpTitle">
+            </h3>
+
+            <p id="stpText">
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="capas">
+
+        <div class="section-title">
+
+            <h2>Principios de Diseño de Capas</h2>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="design-grid">
+
+            <div class="design-card">
+
+                <h3>Identidad Funcional</h3>
+
+                <p>
+                    Cada capa debe cumplir funciones específicas y diferenciadas,
+                    evitando superposición de tareas.
+                </p>
+
+            </div>
+
+            <div class="design-card">
+
+                <h3>Fronteras Claras</h3>
+
+                <p>
+                    Las interfaces entre capas deben minimizar la complejidad
+                    y el intercambio innecesario de información.
+                </p>
+
+            </div>
+
+            <div class="design-card">
+
+                <h3>Independencia Tecnológica</h3>
+
+                <p>
+                    Cada capa debe poder modificarse sin afectar el funcionamiento
+                    interno de las demás.
+                </p>
+
+            </div>
+
+            <div class="design-card">
+
+                <h3>Ocultamiento de Información</h3>
+
+                <p>
+                    Las capas superiores utilizan servicios abstractos sin conocer
+                    los detalles internos de implementación.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="section alt" id="qos">
+
+        <div class="section-title">
+
+            <h2>Primitivas de Servicio y QoS</h2>
+            <p>Un servicio es un conjunto de operaciones o primitivas que
+                una carpeta inferior pone a dispocicion de la capa
+                inmediatamente superior para interactuar y transferir
+                informacion
+            </p>
+            <div class="line"></div>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Tipos de Primitivas
+                </h3>
+
+                <p>
+                    Orientado a Conexión: <br>Requiere una secuencia rigurosa de cuatro primitivas: Request, Indication,
+                    Response y Confirm.
+
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3></h3>
+
+                <p>
+                    Sin Conexión: <br> Prescinde de negociación previa. Usa solo DATA.request y DATA.indication
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Parámetros Críticos de QoS
+                </h3>
+
+                <p>
+                    Las primitivas permiten negociar parámetros contractuales de rendimiento de red:
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3></h3>
+
+                <p>
+                    - Ancho de banda mínimo(bps)<br>
+                    - Retardo de tránsito máximo (latencia)<br>
+                    - Jitter máximo (variación del retardo)<br>
+                    -Probabilidad de pérdida de paquetes<br>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="osi-section">
+
+        <div class="section-title">
+
+            <h2>Modelo OSI</h2>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="interactive-layout">
+
+            <div class="osi-model">
+
+                <button class="layer" onclick="showOSI('app')">
+                    7 - Aplicación
+                </button>
+
+                <button class="layer" onclick="showOSI('presentacion')">
+                    6 - Presentación
+                </button>
+
+                <button class="layer" onclick="showOSI('sesion')">
+                    5 - Sesión
+                </button>
+
+                <button class="layer" onclick="showOSI('transporte')">
+                    4 - Transporte
+                </button>
+
+                <button class="layer" onclick="showOSI('red')">
+                    3 - Red
+                </button>
+
+                <button class="layer" onclick="showOSI('enlace')">
+                    2 - Enlace
+                </button>
+
+                <button class="layer" onclick="showOSI('fisica')">
+                    1 - Física
+                </button>
+
+            </div>
+
+            <div class="side-info-box">
+
+                <h3 id="osiTitle">
+                    Modelo OSI
+                </h3>
+
+                <p id="osiText">
+                    Seleccioná una capa para visualizar la información.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section alt" id="tcpip">
+
+        <div class="section-title">
+
+            <h2>Modelo TCP/IP</h2>
+            <p>
+                TCP/IP es un protocolo de enlace de datos que se usa en Internet para que los ordenadores y otros
+                dispositivos envíen y reciban datos. <br> TCP/IP son las siglas en inglés de Transmission Control
+                Protocol/Internet Protocol (protocolo de control de transmisión/protocolo de Internet). <br>Posibilita
+                que los dispositivos conectados a Internet se comuniquen entre sí en varias redes.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="interactive-layout">
+
+            <div class="tcp-container">
+
+                <button class="tcp-card" onclick="showTCP('app')">
+                    Aplicación
+                </button>
+
+                <button class="tcp-card" onclick="showTCP('transporte')">
+                    Transporte
+                </button>
+
+                <button class="tcp-card" onclick="showTCP('internet')">
+                    Internet
+                </button>
+
+                <button class="tcp-card" onclick="showTCP('red')">
+                    Acceso a la Red
+                </button>
+
+            </div>
+
+            <div class="side-info-box">
+
+                <h3 id="tcpTitle">
+                    Modelo TCP/IP
+                </h3>
+
+                <p id="tcpText">
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="comparativa">
+
+        <div class="section-title">
+
+            <h2>OSI vs TCP/IP</h2>
+            <p>Tanto el modelo OSI como el TCP/IP están diseñados para proporcionar una estructura para pensar y debatir
+                sobre el tráfico de red. Sin embargo, los dos modelos tienen algunas diferencias significativas</p><br>
+            <div class="comparison-list">
+
+                <div class="comparison-item">
+                    <h3>Capas</h3>
+
+                    <p>
+                        El modelo OSI tiene siete capas diferentes construidas en torno a las distintas funciones
+                        que debe realizar el tráfico de red.
+                    </p>
+
+                    <p>
+                        El modelo TCP/IP tiene un total de cuatro capas que están ligadas directamente
+                        a protocolos específicos que existen en el tráfico de red.
+                    </p>
+                </div>
+
+                <div class="comparison-item">
+                    <h3>Aplicabilidad en el Mundo Real</h3>
+
+                    <p>
+                        El modelo OSI está diseñado como un modelo conceptual de referencia,
+                        lo que significa que no se corresponde directamente con protocolos reales.
+                    </p>
+
+                    <p>
+                        El modelo TCP/IP se basa en protocolos estándar utilizados para crear conexiones de red.
+                    </p>
+                </div>
+
+                <div class="comparison-item">
+                    <h3>Dependencia del Protocolo</h3>
+
+                    <p>
+                        El modelo TCP/IP se basa en protocolos específicos diseñados para lograr objetivos concretos.
+                    </p>
+
+                    <p>
+                        El modelo OSI es independiente del protocolo, permitiendo el uso de cualquier pila de
+                        protocolos.
+                    </p>
+                </div>
+
+                <div class="comparison-item">
+                    <h3>Tipos de Tráfico</h3>
+
+                    <p>
+                        El modelo OSI admite tráfico orientado a conexión y tráfico sin conexión.
+                    </p>
+
+                    <p>
+                        El modelo TCP/IP está diseñado específicamente para tráfico TCP orientado a conexión.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="line"></div>
+
+        </div>
+
+        <div class="comparison">
+
+            <div class="comparison-box">
+
+                <h3>OSI</h3>
+
+                <ul>
+
+                    <li>7 capas</li>
+
+                    <li>Modelo teórico</li>
+
+                    <li>ISO</li>
+
+                    <li>Mayor separación funcional</li>
+
+                </ul>
+
+            </div>
+
+            <div class="comparison-box">
+
+                <h3>TCP/IP</h3>
+
+                <ul>
+
+                    <li>4 capas</li>
+
+                    <li>Modelo práctico</li>
+
+                    <li>DARPA</li>
+
+                    <li>Base de Internet</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer id="footer">
+
+        <h2>Integrantes</h2>
+
+
+        <p>Emmanuel Nardone</p>
+        <p>Celeste Camia
+        </p>
+        <p>Rocio Suarez</p>
+        <p>Facundo Cámara</p>
+
+        <div class="footer-line"></div>
+
+        <p class="copy">
+            Redes y comunicaciones 3ro 1ra
+        </p>
+
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
